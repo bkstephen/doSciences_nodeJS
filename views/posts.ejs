@@ -1,0 +1,7 @@
+
+<% posts.forEach(function(p){%>
+    <div class="card border-info mb-3" style="max-width: 20rem;"> 
+        <div class="card-header"><div><%- p.name %></div>  <div>Date: <%- p.date.toLocaleDateString() %></div> </div>
+        <div style="padding:10px;" class="card-text"> <%- p.content %> </div>
+    </div>
+<% });%>

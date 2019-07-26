@@ -1,13 +1,16 @@
    
+<div>
     <form method="post">
         <div >
             <label>Enter Name of Mathematical Theory:  `sum_(i=1)^n i^3=((n(n+1))/2)^2`</label><br/>
-            <input class="form-control" type="text" id="postName" TextMode="Multiline" name="postName"/><br/>
-            <textarea id="textBox" name="textBox"></textarea>
+            <input class="form-control" type="text" id="postName" TextMode="Multiline" name="postName"/><br/>            
+            <textarea id="textBox" name="textBox"></textarea></br>
             <script type="text/javascript"> CKEDITOR.replace("textBox"); </script>      
             <input class="btn btn-success" type="submit" name="commentSubmit">
+            <p>User: <%= user.name%></P>
         </div>
     </form>
+</div>
 
 
   

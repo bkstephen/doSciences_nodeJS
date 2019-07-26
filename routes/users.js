@@ -9,13 +9,13 @@ const User = require('../models/User');
 //login page
 router.get('/login', (req, res) => {
 
-    res.render('login');
+    res.render('login', {auth: req.isAuthenticated()});
 });
 
 //register page
 router.get('/register', (req, res) => {
 
-    res.render('register');
+    res.render('register', {auth: req.isAuthenticated()});
 });
 
 //POST request for registering
@@ -65,7 +65,7 @@ router.post('/register', (req, res) => {
                             newUser.save()
                                 .then(user => {
                                     req.flash('success_msg', 'You are now registered and can log in');
-                                    res.redirect('/users/login');
+                                    res.redirect('/users/login', {auth: req.isAuthenticated()});
                                 })
                                 .catch(err=>console.error(err));
                         }));
@@ -87,7 +87,7 @@ router.post('/login', (req, res, next) => {
 router.get('/logout', (req,res)=>{
     req.logOut();
     req.flash('success_msg', 'You are logged out');
-    res.redirect('/users/login');
+    res.redirect('/users/login', {auth: req.isAuthenticated()});
 })
 
 module.exports = router;
