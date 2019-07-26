@@ -5,9 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
     <link rel="stylesheet" href="/views/css/bootstrap.min.css">
     <link rel="stylesheet" href="/views/css/bootstrap.css">
-    <title>DoSciences.org</title>
+    <script src="../node_modules/ckeditor/ckeditor.js"></script>
+    <script src="../node_modules/ckeditor/adapters/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#textBox').ckeditor();
+        });
+    </script>
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("editorDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </head>
 
 <body>
