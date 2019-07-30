@@ -15,24 +15,16 @@
             $('#textBox').ckeditor();
         });
     </script>
-    <script type="text/javascript">
-        function myFunction() {
-            var x = document.getElementById("editorDiv");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
-    </script>
 </head>
 
 <body>
     <nav lass="navbar navbar-expand-lg navbar-dark bg-primary">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <h1 class="page-header"><i></i></h1>
-            <div class="navbar-brand">Do Sciences </div>
-                <% if(auth){ %>
+            <h1 class="page-header"></h1>
+            <div class="navbar-brand"><a class="nav-link" href="/">Do Sciences</a></div>            
+                <a class="nav-link" href="/posts">See all posts</a>               
+                <% if(auth){ %>          
+                 <a class="nav-link" href="/posts/createpost">Create post</a>          
                 <div style="margin-left:auto; margin-right:0"> <h5>You are logged in </h5></div>                              
                 <% } else { %>
                 <div style="margin-left:auto; margin-right:0"> 

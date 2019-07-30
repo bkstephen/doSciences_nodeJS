@@ -40,7 +40,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Connect flas
+//Connect flash
 app.use(flash());
 
 //Global vars
@@ -54,5 +54,5 @@ app.use(function (req, res, next) {
 //routes
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
-app.use('/dashboard', require('./routes/index') )
-app.use('/posts', require('./routes/posts') )
+app.use('/dashboard', require('./routes/index') );
+app.use('/posts', require('./routes/posts') );

@@ -1,7 +1,14 @@
 
 <% posts.forEach(function(p){%>
-    <div class="card border-info mb-3" style="max-width: 20rem;"> 
-        <div class="card-header"><div><%- p.name %></div>  <div>Date: <%- p.date.toLocaleDateString() %></div> </div>
+    <div class="card border-info mb-3" style="max-width: 200rem;"> 
+             
+        <form method="POST">
+        <div class="card-header"><div><%- p.name %> &nbsp; | &nbsp;Date: <%- p.date.toLocaleDateString() %>   
+            <input type="hidden" name="postid" id="postid" value='<%- p._id %>'>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-success" >See post</button>
+            </div>
+        </form> </div> 
         <div style="padding:10px;" class="card-text"> <%- p.content %> </div>
     </div>
 <% });%>
+
