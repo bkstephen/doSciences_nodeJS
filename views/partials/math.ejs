@@ -1,0 +1,19 @@
+<div>    
+    <input type="text" value="`sum_(i=1)^n i`" id="myInput" onInput="onInput()" >
+    <button onclick="copyFunction(`${'myInput'}`)" id="myInputButton">`sum_(i=1)^n i`</button>
+
+    
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <!-- copies button's data -->
+            <button class="btn btn-primary" id="myInput1" onclick="copyToClipboard(myInput1)">`sum_(i=1)^n i`</button>
+            <button class="btn btn-primary" id="myInput2" onclick="copyToClipboard(myInput2)">`prod_(i=1)^n i`</button>
+            <button class="btn btn-primary" id="myInput3" onclick="copyToClipboard(myInput3)">`int_(x)^y i`</button>
+            <button class="btn btn-primary" id="myInput4" onclick="copyToClipboard(myInput4)">`sum_(i=1)^n i`</button>
+    </div>
+</div>
+</div>

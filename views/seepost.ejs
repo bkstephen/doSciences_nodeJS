@@ -14,19 +14,23 @@
                 </form>                    
         </div>
         <div style="padding:10px;" class="card-text"> <%- post.content %> </div>
-    </div>    
+    </div>  
+    
     <div>
-        <%if(auth){%>
-            <form method="POST">
-                <div >
+        <%if(auth){%>            
+            <div style="padding:25px">
+                <form method="POST">
                     <input type="hidden" name="postid" id="postid" value='<%-post._id %>'>
                     <input type="hidden" name="userName" id="userName" value='<%-post.userName %>'>
                     <label>Help with mathematical theory:</label><br/>          
-                    <textarea id="textBox" id="textBox" name="textBox"></textarea>
-                    <script type="text/javascript"> CKEDITOR.replace("textBox"); </script></br>     
-                    <button type="submit" id="button" name="button" value="addcomment" class="btn btn-success" >Add Comment</button>                
-                </div>
-            </form>            
+                    <textarea style="width:100%; height:150px;" id="textBox" id="textBox" name="textBox"></textarea>
+                    </br>     
+                    <button type="submit" id="button" name="button" value="addcomment" class="btn btn-success" >Add Comment</button> 
+                </form>                 
+            </div>
+
+           
+                      
         <%}else{%>
             <a class="btn btn-link" href="/users/login">Login to comment</a>
         <%}%>
@@ -40,4 +44,9 @@
                 <div style="padding:10px;" class="card-body"><p class="card-text"> <%- p.content %> </p></div>
             </div>
         <% });}%>
+    
+     
+
+        
 </body>
+

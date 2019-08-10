@@ -50,7 +50,7 @@ router.get('/seepost/:id', async (req,res)=>{
     }
 });
 
-router.get('/seepost/api/:id', async (req,res)=>{    
+router.get('/api/seepost/:id', async (req,res)=>{    
     const post = await Post.findById(req.params.id);
     const comments = await Comment.find({postId:req.params.id});
     const arr = [post, comments];

@@ -8,13 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
     <link rel="stylesheet" href="/views/css/bootstrap.min.css">
     <link rel="stylesheet" href="/views/css/bootstrap.css">
-    <script src="../node_modules/ckeditor/ckeditor.js"></script>
-    <script src="../node_modules/ckeditor/adapters/jquery.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('#textBox').ckeditor();
-        });
-    </script>
 </head>
 
 <body>
@@ -36,6 +29,14 @@
     <div class="container">
         <%- body %>
     </div>
+    <script src="../node_modules/ckeditor/ckeditor.js"></script>
+    <script src="../node_modules/ckeditor/adapters/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#textBox').ckeditor();
+        });
+    </script>
+    <script type="text/javascript"> CKEDITOR.replace("textBox"); </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -45,6 +46,35 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+        function copyFunction(text) {
+            /* Get the text field */
+            var copyText = document.getElementById(text);
+            /* Select the text field */
+            copyText.select();            
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+            /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);} </script>
+
+    <script >
+        function onInput(){
+            var val = document.getElementById('myInput').value;
+            document.getElementById('myInputButton').innerText = val;
+        }
+    </script>
+    <script >
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");            
+            $temp.remove();
+            alert("Copied the equation");
+        }
+    </script>
+
+    
 </body>
 
 </html>

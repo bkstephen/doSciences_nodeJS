@@ -9,7 +9,7 @@ app.listen(PORT, console.log('Server started on port' + PORT));
 app.use("/node_modules/ckeditor", express.static(__dirname + "/node_modules/ckeditor"));
 app.use("/views/css", express.static(__dirname + "/views/css"));
 const passport = require('passport');
-
+app.set('view cache', false);
 //Passport config
 require('./config/passport')(passport);
 
